@@ -1,3 +1,5 @@
+package tests;
+
 import java.time.Duration;
 import java.util.HashMap;
 import org.openqa.selenium.By;
