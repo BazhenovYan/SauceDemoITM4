@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
+import pages.CartPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 
@@ -18,6 +19,7 @@ public class BaseTest {
     SoftAssert softAssert;
     LoginPage loginPage;
     ProductsPage productsPage;
+    CartPage cartPage;
 
     @BeforeMethod
     public void setup() {
@@ -31,11 +33,12 @@ public class BaseTest {
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-infobars");
         options.addArguments("--headless");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         softAssert = new SoftAssert();
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
+        cartPage = new CartPage(driver);
 
     }
     @AfterMethod
