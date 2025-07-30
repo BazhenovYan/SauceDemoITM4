@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
-import pages.CartPage;
+//import pages.CartPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 
@@ -19,7 +19,7 @@ public class BaseTest {
     SoftAssert softAssert;
     LoginPage loginPage;
     ProductsPage productsPage;
-    CartPage cartPage;
+    //CartPage cartPage;
 
     @BeforeMethod
     public void setup() {
@@ -38,7 +38,7 @@ public class BaseTest {
         softAssert = new SoftAssert();
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
-        cartPage = new CartPage(driver);
+        //cartPage = new CartPage(driver);
 
     }
     @AfterMethod
