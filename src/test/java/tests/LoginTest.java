@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test (priority = 1)
     public void checkLoginWithoutPassword() {
         loginPage.open();
         loginPage.login("standard_user", "");
@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest {
                 "Сообщение не соответствует");
     }
 
-    @Test
+    @Test(priority = 3)
     public void checkLoginWithoutLogin() {
         loginPage.open();
         loginPage.login("", "secret_sauce");
@@ -26,7 +26,7 @@ public class LoginTest extends BaseTest {
                 "Сообщение не соответствует");
     }
 
-    @Test
+    @Test (priority = 4)
     public void checkLoginWithoutNegativeValue() {
         loginPage.open();
         loginPage.login("standawa", "123456");
@@ -35,7 +35,7 @@ public class LoginTest extends BaseTest {
                 "Сообщение не соответствует");
     }
 
-    @Test
+    @Test (priority = 2)
     public void checkLogin() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
